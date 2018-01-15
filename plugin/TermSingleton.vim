@@ -1,6 +1,6 @@
 " TermSingleton.vim
 " Author: hiromi-mi (https://github.com/hiromi-mi)
-" License: CC0 1.0 (https://creativecommons.org/publicdomain/zero/1.0/) or The Unlicenes
+" License: The Unlicense (See LICENSE)
 " Last Modified: 2018.01.15
 "
 " How To Use: just to source TermSingleton.vim in vimrc
