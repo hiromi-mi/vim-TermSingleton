@@ -26,8 +26,10 @@ if $VIM_SERVERNAME != ''
                   \ join(map(argv(), 'fnamemodify(v:val, ":p")')) . "<CR>")
       endif
       quitall
-   catch
-      echo "TermSingleton: Can't use outside Vim (maybe because of sandbox or restricted-mode)"
+   catch /E145/
+      " Because of Restricted-Mode: Disabled
+   catch /.*/
+      echo "TermSingleton: Can't use outside Vim (maybe because of sandbox?)"
    endtry
 endif
 
