@@ -1,7 +1,7 @@
 " TermSingleton.vim : Avoid to open Vim inside Vim's Terminal
 " Author: hiromi-mi (https://github.com/hiromi-mi)
 " License: The Unlicense (See LICENSE)
-" Last Modified: 2018.01.25
+" Last Modified: 2018.02.14
 "
 " How To Use: just to source TermSingleton.vim in vimrc
 " Options:
@@ -28,13 +28,17 @@ if $VIM_SERVERNAME != ''
       quitall
    catch /E145/
       " Because of Restricted-Mode: Disabled
+      echo "TermSingleton: Cannot use outside Vim (maybe because of sandbox?)"
    catch /.*/
-      echo "TermSingleton: Can't use outside Vim (maybe because of sandbox?)"
    endtry
 endif
 
 if has('clientserver') && empty(v:servername)
-   call remote_startserver("VIM")
+   try
+      call remote_startserver("VIM")
+   catch /E240/
+      echo "TermSingleton: Clientserver feature of Vim are not supported. Cannot use TermSingleton"
+   endtry
 endif
 
 let g:loaded_termsingleton = 1

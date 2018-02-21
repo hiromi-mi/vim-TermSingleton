@@ -1,0 +1,28 @@
+ TermSingleton.vim : Avoid to open Vim inside Vim's Terminal
+-------------------
+
+REQUIREMENTS
+----------------
+* Vim with terminal feature and clientserver feature
+(Running `vim --version` will clarify whether your installation supports or not.)
+   - To use terminal feature, use latest Vim
+   - To use clientserver feature, X11-based GVim or Windows-based Vim/GVim are needed.
+
+INSTALLATION
+----------------
+
+Get this plugin.
+`git clone --depth 1 https://github.com/hiromi-mi/vim-TermSingleton`
+
+(on *nix-based environements)
+
+Writing down into your vimrc.
+`packadd! vim-TermSingleton`
+
+LICENSE
+----------------
+This plugin is licensed by The Unlicense (on LICENSE).
+
+ACKNOWLEDGEMENTS
+---------------
+This name 'singleton' was inspired by link:singleton.vim[https://github.com/thinca/vim-singleton]
