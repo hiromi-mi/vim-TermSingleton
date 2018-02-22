@@ -20,10 +20,14 @@ let g:termsingleton_opencmd = get(g:, "termsingleton_opencmd", "tab drop")
 
 if $VIM_SERVERNAME != ''
    try
+         " This feature: Move to terminals' current directory in the file's window
       if argc() > 0
-	 silent call remote_send($VIM_SERVERNAME,
-                  \ "<C-W>:" . g:termsingleton_opencmd . " " .
-                  \ join(map(argv(), 'fnamemodify(v:val, ":p")')) . "<CR>")
+         " Old behaviour
+         for val in argv()
+            silent call remote_send($VIM_SERVERNAME,
+                     \ "<C-W>:" . g:termsingleton_opencmd . " " .
+                     \ fnamemodify(val, ":p") . "| lcd " . getcwd() . "<CR>")
+         endfor
       endif
       quitall
    catch /E145/
