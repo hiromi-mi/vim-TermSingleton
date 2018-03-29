@@ -1,6 +1,8 @@
 TermSingleton.vim
 =================
 
+(To read README written in Japanese, visit README_japanese.adoc)
+
 This plugins will enable not to open Vim inside Vim's Terminal.
 
 == Requirements
@@ -15,8 +17,10 @@ To use TermSingleton.vim, it is required to have some Vim's features.
 
 
 == Installation 
-First, get this plugin from the repository.
+First, get this plugin from the repository to vim's package directory.
 ----
+mkdir -p ~/.vim/pack/my/opt
+pushd ~/.vim/pack/my/opt
 git clone --depth 1 https://github.com/hiromi-mi/vim-TermSingleton
 ----
 
