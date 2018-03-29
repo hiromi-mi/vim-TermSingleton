@@ -1,0 +1,25 @@
+TermSingleton.vim
+=================
+
+Vim の端末機能 (:h terminal 参照) により開いた端末内で、Vim を多重に起動させないようにするプラグインです。
+利用には、Vim の端末機能と Clientserver 機能が要求されます。
+
+このプラグインのライセンスは LICENSE ファイルにある通り、The Unlicense です。
+
+このプラグインの名称は link:singleton.vim[https://github.com/thinca/vim-singleton] に
+影響されたものです。
+
+== 導入
+このプラグインをGitHub からお好みの場所へ取得します。
+
+----
+mkdir -p ~/.vim/pack/my/opt
+pushd ~/.vim/pack/my/opt
+git clone --depth 1 https://github.com/hiromi-mi/vim-TermSingleton
+----
+
+そして、vimrc に以下を書き加えてください。
+
+----
+packadd! vim-TermSingleton
+----
